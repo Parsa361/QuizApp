@@ -2,6 +2,7 @@
     <div>
         <!-- Container -->
         <div class="container mx-auto text-center">
+            <p class="mt-10">you answered : 0/10</p>
             <!-- Question -->
             <h1 class="my-10 mx-[2rem]">Questions :</h1>
 
