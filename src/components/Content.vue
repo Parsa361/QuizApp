@@ -2,9 +2,9 @@
     <div>
         <!-- Container -->
         <div class="container mx-auto text-center">
-            <p class="mt-10">you answered : 0/10</p>
+            <p class="mt-10">you answered : {{index + 1}}/10</p>
             <!-- Question -->
-            <h1 class="my-10 mx-[2rem]">Questions :</h1>
+            <h1 class="my-10 mx-[2rem]">{{cQuestion.question}}</h1>
 
             <hr class="mb-10">
 
@@ -33,7 +33,7 @@
                     <p class="text-center px-2 py-1 text-white">Submit</p>
                 </button>
                 <!-- Next button -->
-                <button class="w-[6rem] h-[3rem] bg-green-500">
+                <button class="w-[6rem] h-[3rem] bg-green-500" @click="next">
                     <p class="text-center px-2 py-1 text-white">Next</p>
                 </button>
             </div>
@@ -44,6 +44,10 @@
 <script>
 export default {
     name: 'ContentSection',
-
+    props: {
+        cQuestion: Object,
+        next: Function,
+        index: Number,
+    }
 }
 </script>
