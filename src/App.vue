@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderSection />
-    <ContentSection v-if="questionList.length" :cQuestion="questionList[index]" :next="next" :index="this.index" />
+    <ContentSection v-if="questionList.length" :cQuestion="questionList[index]" :next="next" :increment="increment" :correctCount="correctCount" :totalCount="totalCount" :index="index" />
 
   </div>
 </template>
@@ -14,13 +14,15 @@ export default {
   name: 'App',
   components: {
     HeaderSection,
-    ContentSection, 
+    ContentSection,
   },
 
   data() {
     return {
       questionList: [],
       index: 0,
+      correctCount: 0,
+      totalCount: 0,
 
     }
   },
@@ -30,6 +32,12 @@ export default {
         this.index++;
       }
     },
+    increment(is_correct) {
+      if (is_correct) {
+        this.correctCount ++;
+      }
+      this.totalCount ++;
+    }
   },
 
   mounted: function () {
